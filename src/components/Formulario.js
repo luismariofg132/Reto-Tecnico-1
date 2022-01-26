@@ -39,7 +39,7 @@ const Formulario = () => {
     }
 
     const envioApi = async () => {
-        const resp = await fetch(endpointComida, {
+        await fetch(endpointComida, {
             method: 'POST',
             body: JSON.stringify(comida),
             headers: {

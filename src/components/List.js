@@ -19,7 +19,7 @@ const List = () => {
     }
 
     const deleteComida = async (idC) => {
-        const resp = await fetch(endpointComida + idC, {
+        await fetch(endpointComida + idC, {
             method: "DELETE"
         })
 
@@ -51,7 +51,7 @@ const List = () => {
                                 <StyledTd>{c.nombreComida}</StyledTd>
                                 <StyledTd>{c.tipoComida}</StyledTd>
                                 <StyledTd>{c.precio}</StyledTd>
-                                <StyledTd><img src={c.imagen} width="150" /></StyledTd>
+                                <StyledTd><img src={c.imagen} width="150" alt={c.nombreComida} /></StyledTd>
                                 <StyledTd><StyledButtonList onClick={() => deleteComida(c.id)}>Eliminar Comida</StyledButtonList></StyledTd>
                             </tr>
                         ))
